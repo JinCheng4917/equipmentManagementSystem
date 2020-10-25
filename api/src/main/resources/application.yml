@@ -15,7 +15,7 @@ spring:
     password: ${datasource.password:}
   # 启用 flyway
   flyway:
-    enabled: true
+    enabled: false
   # 上传文件大小限制
   servlet:
     multipart:

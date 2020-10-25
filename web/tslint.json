@@ -1,0 +1,22 @@
+{
+  "extends": "../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "kebab-case"
+    ],
+    "variable-name": [
+      true,
+      // 允许首写以下划线打头
+      "allow-leading-underscore"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
+import {EquipmentComponent} from './equipment.component';
+import {DetailComponent} from './detail/detail.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: EquipmentComponent,
+    data: {
+      title: '首页'
+    }
+  },
+  {
+    path: 'add',
+    component: AddComponent,
+    data: {
+      title: '新增'
+    }
+  },
+  {
+    path: 'edit',
+    component: EditComponent,
+    data: {
+      title: '编辑'
+    }
+  },
+  {
+    path: 'detail',
+    component: DetailComponent,
+    data: {
+      title: '详情'
+    }
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class EquipmentRoutingModule {
+}
