@@ -6,13 +6,12 @@ import { LayoutComponent } from './part/layout/layout.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'auth',
-    data: {authModel: LoginComponent.AUTH_MODEL_PASSWORD_OTP},
-    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
+    path: 'login',
+    loadChildren: () => import('./pages/auth/login/login.module').then(m => m.LoginModule)
   },
   {
     path: '',

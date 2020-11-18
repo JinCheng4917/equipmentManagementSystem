@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup} from '@angular/forms';
-import {CommonService} from '../../../../service/CommomService';
 import {Router} from '@angular/router';
 import {User} from '../../../../func/User';
+import {CommonService} from '../../../../service/common.service';
 
 @Component({
   selector: 'app-add',
