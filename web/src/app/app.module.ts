@@ -6,6 +6,8 @@ import { FuncModule } from './func/func.module';
 import { PartModule } from './part/part.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {YunzhiInterceptor} from './net/yunzhi.interceptor';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {YunzhiInterceptor} from './net/yunzhi.interceptor';
     AppRoutingModule,
     FuncModule,
     PartModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

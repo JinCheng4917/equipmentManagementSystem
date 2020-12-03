@@ -2,7 +2,6 @@ spring:
   profiles:
     # dev: 开发环境；pro 生产环境
     active: ${active:dev}
-
   # hibernate 数据库 验证级别
   jpa:
     hibernate:
@@ -33,3 +32,10 @@ server:
 # 开发环境（使用本机mysql数据库的开发环境）
 spring:
   profiles: dev
+
+time:
+  #特定时间
+  cron: 50 05 13 ? * *
+  #间隔秒数
+  interval: 5
+

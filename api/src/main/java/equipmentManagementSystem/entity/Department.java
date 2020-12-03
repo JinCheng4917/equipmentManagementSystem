@@ -2,6 +2,7 @@ package equipmentManagementSystem.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Department{
@@ -14,8 +15,29 @@ public class Department{
      */
     private String name;
 
+    private String code;
+
+    @OneToOne
+    private User user;
+
     public String getName() {
         return name;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setCode(String number) {
+        this.code = number;
     }
 
     public void setName(String name) {

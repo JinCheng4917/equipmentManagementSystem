@@ -7,6 +7,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 import {VUser} from '../base/vuser';
 import {AbstractControl, AsyncValidatorFn, FormGroup, ValidationErrors, ValidatorFn} from '@angular/forms';
 import {User} from '../func/User';
+import {Page} from '../base/page';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class UserService {
     this.getCurrentLoginUser();
   }
 
-  private getCurrentLoginUser() {
+  private getCurrentLoginUser(): void {
     const appOnReadyItem = this.commonService.getAppOnReadyItem();
 
     this.httpClient.get<User>(`${this.url}/me`)
@@ -79,6 +80,21 @@ export class UserService {
   setCurrentLoginUser(user: User): void {
     this.currentLoginUser = user;
     this.currentLoginUserSubject.next(user);
+  }
+
+  /**
+   * 分页方法
+   * @param page 第几页
+   * @param size 每页条数
+   * @param userId 用户
+   */
+  public getAll(page: number, size: number): Observable<Page<User>> {
+    const params: { [key: string]: any } = {
+      page: String(page),
+      size: String(size),
+    };
+
+    return this.httpClient.get<Page<User>>(`${this.url}/getAll`, {params});
   }
 
   /**

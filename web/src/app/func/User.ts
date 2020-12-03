@@ -1,11 +1,15 @@
 /**
  * 用户实体
  */
+import {Department} from './Department';
+
 export class User {
-  static ROLE_TEACHER = 0;
-  static ROLE_STUDENT = 1;
   /** id */
   id: number;
+
+  jobNumber: string;
+
+  department: Department;
 
   /** 名称 */
   name: string;
@@ -20,9 +24,9 @@ export class User {
   role: number;
 
   /** 是否为admin */
-  admin: boolean;
+  sex: boolean;
 
-  constructor(data?: { id?: number, name?: string, username?: string, password?: string, role?: number, admin?: boolean}) {
+  constructor(data?: { id?: number, name?: string, username?: string, password?: string, role?: number, sex?: boolean, jobNumber?: string, department?: Department}) {
     if (data) {
       if (data.id) {
         this.id = data.id;
@@ -44,8 +48,14 @@ export class User {
         this.role = data.role;
       }
 
-      if (data.admin) {
-        this.admin = data.admin;
+      if (data.sex) {
+        this.sex = data.sex;
+      }
+      if (data.jobNumber) {
+        this.jobNumber = data.jobNumber;
+      }
+      if(data.department) {
+        this.department = data.department;
       }
     }
 

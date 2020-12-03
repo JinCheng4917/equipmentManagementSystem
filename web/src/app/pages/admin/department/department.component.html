@@ -19,33 +19,17 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>采购部门</td>
-    <td>01102</td>
-    <td>张三</td>
+  <tr *ngFor="let department of departments.content; let $index = index;">
+    <td>{{$index + 1}}</td>
+    <td>{{department.name}}</td>
+    <td>{{department.code}}</td>
+    <td>{{department?.user?.name}}</td>
     <td>
-      <a class="btn btn-primary btn-sm mr-2" routerLink="/department/edit">
+      <button class="btn btn-primary btn-sm mr-2" routerLink="/department/edit/{{department.id}}">
         <i class="fas fa-edit"></i>
         编辑
-      </a>
-      <button type="button" class="btn btn-danger btn-sm">
-        <i class="fas fa-trash-alt"></i>
-        删除
       </button>
-    </td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>宣传部门</td>
-    <td>01103</td>
-    <td>李四</td>
-    <td>
-      <a class="btn btn-primary btn-sm mr-2" routerLink="/department/edit">
-        <i class="fas fa-edit"></i>
-        编辑
-      </a>
-      <button type="button" class="btn btn-danger btn-sm">
+      <button type="button" class="btn btn-danger btn-sm mr-2">
         <i class="fas fa-trash-alt"></i>
         删除
       </button>

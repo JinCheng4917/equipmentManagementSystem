@@ -43,9 +43,7 @@ public class User{
     /**
      * 角色
      */
-    @OneToMany
-    @JsonView(RolesJsonView.class)
-    private Set<Role> roles;
+    private Long role;
 
     /**
      * 性别
@@ -59,11 +57,6 @@ public class User{
      */
     @Column(nullable = false)
     private String username;
-
-    /**
-     * 是否是超级管理员
-     */
-    private Boolean admin;
 
 
     /**
@@ -92,10 +85,6 @@ public class User{
         return username;
     }
 
-    public Boolean getAdmin() {
-        return admin;
-    }
-
     public String getName() {
         return name;
     }
@@ -104,6 +93,9 @@ public class User{
         return sex;
     }
 
+    public Long getRole() {
+        return role;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -118,28 +110,21 @@ public class User{
     }
 
     public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
+        this.password = BeanService.getPasswordEncoder().encode(password);
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public void setRole(Long role) {
+        this.role = role;
     }
 
     public void setSex(Boolean sex) {
         this.sex = sex;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
 
     public interface RolesJsonView {
     }

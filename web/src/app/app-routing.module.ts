@@ -32,17 +32,10 @@ const routes: Routes = [
         }
       },
       {
-        path: 'place',
-        loadChildren: () => import('./pages/admin/place/place.module').then(m => m.PlaceModule),
+        path: 'dashboard',
+        loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule),
         data: {
-          title: '地区管理'
-        }
-      },
-      {
-        path: 'status',
-        loadChildren: () => import('./pages/admin/status/status.module').then(m => m.StatusModule),
-        data: {
-          title: '状态管理'
+          title: '首页'
         }
       },
       {
@@ -52,25 +45,18 @@ const routes: Routes = [
           title: '类型管理'
         }
       },
-      // {
-      //   path: 'personal',
-      //   loadChildren: () => import('./pages/personal/personal.module').then(m => m.PersonalModule),
-      //   data: {
-      //     title: '个人中心'
-      //   }
-      // },
+      {
+        path: 'personalCenter',
+        loadChildren: () => import('./pages/personal-center/personal-center.module').then(m => m.PersonalCenterModule),
+        data: {
+          title: '个人中心'
+        }
+      },
       {
         path: 'user',
         loadChildren: () => import('./pages/admin/user/user.module').then(m => m.UserModule),
         data: {
           title: '用户管理'
-        }
-      },
-      {
-        path: 'role',
-        loadChildren: () => import('./pages/admin/role/role.module').then(m => m.RoleModule),
-        data: {
-          title: '角色管理'
         }
       },
     ]
