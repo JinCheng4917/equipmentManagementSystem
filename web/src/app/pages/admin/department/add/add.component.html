@@ -17,20 +17,9 @@
           <input type="text" class="form-control" id="code" placeholder="请输入部门编码" formControlName="code" />
         </div>
       </div>
-      <div class="row mt-4">
-        <div class="col-md-4 text-right">
-          <label for="code" class="form-text">主管</label>
-        </div>
-        <div class="col-md-8" formControlName="user">
-          <select class="form-control">
-            <option [ngValue]="null" >请选择用户...</option>
-            <option *ngFor="let _college of state" [ngValue]="_college">{{_college.name}}</option>
-          </select>
-        </div>
-      </div>
       <div class="row mt-5">
-        <div class="col-md-8 offset-md-4">
-          <button type="submit">
+        <div class="offset-md-6">
+          <button type="submit" class="btn btn-primary">
             <i class="far fa-save"></i>
             &nbsp;保存
           </button>

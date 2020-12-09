@@ -4,7 +4,7 @@
 export const environment = {
   production: true,
   color: '#007BFF',
-  title: '设备管理平台',
+  title: '设备管理系统',
   style: 'record'
 };
 

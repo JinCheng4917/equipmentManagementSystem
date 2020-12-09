@@ -2,97 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e5d18e8-c310-419e-96c0-f2ddb9d87ddd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/config/YunzhiConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/constant/AuthConst.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/DepartmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Ding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/input/PUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/input/VUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/UserSpecs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/schedule/DeleteDayLogSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/security/UserServiceAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/security/YunzhiSecurityRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/CacheService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/CacheServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/EquipmentManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/EquipmentManagementSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/DepartmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/DepartmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/func/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/func/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/func/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/func/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/func/func.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/func/func.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/add/add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/add/add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/department-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/department-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/department.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/department.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/department.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/department.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/add/add.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/add/add.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/add/add.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/add/add.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/edit/edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/edit/edit.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/edit/edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/edit/edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/place-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/place.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/place.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/place.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/place.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/place/place.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/add/add.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/add/add.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/add/add.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/add/add.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/edit/edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/edit/edit.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/edit/edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/edit/edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/role-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/role.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/role.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/role.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/role.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/role/role.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/add/add.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/add/add.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/add/add.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/add/add.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/edit/edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/edit/edit.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/edit/edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/edit/edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/state-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/status.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/status.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/status.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/status.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/status/status.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/add/add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/add/add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/part/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/part/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/part/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/part/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/part/menu/menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/part/menu/menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/add/add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/add/add.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/part/nav/nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/part/nav/nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/part/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/part/nav/nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/service/common.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/common.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/service/department.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/department.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/app/func/pipe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/app/service" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -131,9 +55,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/app/service" />
       <recent name="$PROJECT_DIR$/web/src/app/func/pipe" />
       <recent name="$PROJECT_DIR$/web/src/app/pages" />
-      <recent name="$PROJECT_DIR$/web/src/app/service" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -149,7 +73,8 @@
       <workItem from="1605755758673" duration="60000" />
       <workItem from="1606869582716" duration="7975000" />
       <workItem from="1607009433855" duration="105000" />
-      <workItem from="1606990363434" duration="3947000" />
+      <workItem from="1606990363434" duration="4149000" />
+      <workItem from="1607503051716" duration="2165000" />
     </task>
     <servers />
   </component>

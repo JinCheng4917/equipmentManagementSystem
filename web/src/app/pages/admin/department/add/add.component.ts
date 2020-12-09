@@ -3,6 +3,9 @@ import {AbstractControl, FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {User} from '../../../../func/User';
 import {CommonService} from '../../../../service/common.service';
+import {AuthService} from '../../../../service/auth.service';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {DepartmentService} from '../../../../service/department.service';
 
 @Component({
   selector: 'app-add',
@@ -14,18 +17,22 @@ export class AddComponent implements OnInit {
   state: Array<User>;
 
   constructor(private commomService: CommonService,
+              private commonService: CommonService,
+              private authService: AuthService,
+              private httpClient: HttpClient,
               private router: Router,
+              private departmentService: DepartmentService,
               private builder: FormBuilder){ }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(): void {
     this.departmentForm = this.builder.group({
       name: [''],
       code: [''],
-      user: [''],
-    }, {updateOn: 'blur'});
-    this.state = new Array<User>();
-    this.state.push(new User({id:1, name:'张三', username: 'zhangsan'}));
-    this.state.push(new User({id:2, name:'李四', username: 'lisi'}));
+    });
   }
 
   /** https://angular.cn/guide/form-validation#built-in-validators */
@@ -39,10 +46,13 @@ export class AddComponent implements OnInit {
 
 
 
-  submit() {
-    this.commomService.success(() => {
-      this.router.navigateByUrl('department');
+  submit(): void {
+    this.departmentService.save(this.departmentForm.value).subscribe(() => {
+      this.commomService.success(() => {
+        this.commonService.back();
+      }, '新增成功');
+    }, (response: HttpErrorResponse) => {
+      this.commonService.httpError(response);
     });
   }
-
 }

@@ -11,4 +11,6 @@ public interface DepartmentService {
     Page<Department> findAll(Pageable pageable);
 
     List<Department> getAll();
+
+    Department add(Department department);
 }

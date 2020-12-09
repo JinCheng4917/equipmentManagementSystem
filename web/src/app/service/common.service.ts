@@ -187,16 +187,18 @@ export class CommonService {
   }
 
   /** 路由后退 */
-  back(): void {
+  back(param = {clearHistoryQueryParams: false}): void {
     /** 清空当前的路由信息 */
     this.clearCurrentRoute();
     if (this.routeStates.length > 0) {
-      /** 获取待后退的url */
-      const state = this.routeStates[this.routeStates.length - 1];
       /** 设置后退状态 */
       this.isBack = true;
       /** 路由跳转 */
-      this.router.navigateByUrl(state.url, {state: state.state});
+      const routeState = this.routeStates[this.routeStates.length - 1];
+      if (param.clearHistoryQueryParams) {
+        routeState.state = {};
+      }
+      this.router.navigateByUrl(routeState.url, {state: routeState.state});
     }
   }
 
