@@ -15,6 +15,9 @@ export class RolePipe implements PipeTransform {
       case 2:
         return `维修人员`;
         break;
+      case 3:
+        return `部门主管`;
+        break;
     }
   }
 }

@@ -1,11 +1,11 @@
 package equipmentManagementSystem.service;
 
 import com.mengyunzhi.core.exception.ObjectNotFoundException;
-import com.mengyunzhi.core.service.CommonService;
 import com.mengyunzhi.core.service.YunzhiService;
 import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.input.PUser;
 import equipmentManagementSystem.input.VUser;
+import equipmentManagementSystem.respority.DepartmentRepository;
 import equipmentManagementSystem.respority.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import javax.xml.bind.ValidationException;
-import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -26,12 +25,14 @@ public class UserServiceImpl implements UserService{
     public static final String DEFAULT_PASSWORD = "hebut";
 
     private final UserRepository userRepository;
+    private final DepartmentRepository departmentRepository;
 
     private final YunzhiService<User> yunzhiService;
 
     public UserServiceImpl(UserRepository userRepository,
-                           YunzhiService<User> yunzhiService) {
+                           DepartmentRepository departmentRepository, YunzhiService<User> yunzhiService) {
         this.userRepository = userRepository;
+        this.departmentRepository = departmentRepository;
         this.yunzhiService = yunzhiService;
     }
 
@@ -39,6 +40,10 @@ public class UserServiceImpl implements UserService{
     public void add(User user) {
         user.setPassword(DEFAULT_PASSWORD);
         this.userRepository.save(user);
+        if (user.getRole().equals(3L)) {
+            user.getDepartment().setUser(user);
+            this.departmentRepository.save(user.getDepartment());
+        }
     }
 
     @Override
@@ -79,7 +84,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Page<User> getAll(String name, String username, String jobNumber, Long role, Pageable pageable) {
-        return (Page<User>) this.userRepository.getAll(name, username, jobNumber, role, pageable);
+        Long id = this.getCurrentLoginUser().getId();
+        return (Page<User>) this.userRepository.getAll(name, username, jobNumber, role, id,  pageable);
     }
 
 

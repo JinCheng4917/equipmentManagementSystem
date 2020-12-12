@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../../../service/user.service";
-import {User} from "../../../func/User";
+import {UserService} from '../../../service/user.service';
+import {User} from '../../../func/User';
+import {CommonService} from "../../../service/common.service";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-user',
@@ -21,7 +23,8 @@ export class UserComponent implements OnInit {
     totalPages: 0,
     content: new Array<User>()
   };
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private commonService: CommonService) { }
 
   ngOnInit(): void {
     this.pageAll();
@@ -35,5 +38,20 @@ export class UserComponent implements OnInit {
         console.log(response);
         // this.pages = this.makePagesByTotalPages(this.params.page, response.totalPages);
       });
+  }
+
+  delete(user: User): void {
+    // 确认框
+    this.commonService.confirm((confirm: boolean) => {
+      if (confirm) {
+        this.userService.delete(user.id).subscribe(() => {
+          this.commonService.success(() => {
+          }, '删除成功');
+          this.pageAll();
+        }, (response: HttpErrorResponse) => {
+          this.commonService.httpError(response);
+        });
+      }
+    }, '即将删除人员');
   }
 }

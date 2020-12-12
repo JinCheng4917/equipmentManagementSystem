@@ -1,5 +1,7 @@
 package equipmentManagementSystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,7 @@ public class Department{
     private String code;
 
     @OneToOne
+    @JsonView(UserJsonView.class)
     private User user;
 
     public String getName() {
@@ -49,4 +52,6 @@ public class Department{
     public Long getId() {
         return id;
     }
+
+    public interface UserJsonView{}
 }

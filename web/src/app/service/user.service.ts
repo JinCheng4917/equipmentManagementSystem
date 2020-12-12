@@ -8,6 +8,7 @@ import {VUser} from '../base/vuser';
 import {AbstractControl, AsyncValidatorFn, FormGroup, ValidationErrors, ValidatorFn} from '@angular/forms';
 import {User} from '../func/User';
 import {Page} from '../base/page';
+import {Department} from "../func/Department";
 
 @Injectable({
   providedIn: 'root'
@@ -153,5 +154,14 @@ export class UserService {
   public resetPassword(id: number): Observable<void> {
     console.log(this.url + '/resetPassword/' + id);
     return this.httpClient.put<void>(this.url + '/resetPassword/' + id , id);
+  }
+
+  save(user: User): any {
+    console.log(user);
+    return this.httpClient.post(`${this.url}`, user);
+  }
+
+  public delete(userId: number): Observable<null> {
+    return this.httpClient.delete<null>(`${this.url}/${userId.toString()}`);
   }
 }

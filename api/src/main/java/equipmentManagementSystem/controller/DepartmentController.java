@@ -1,5 +1,6 @@
 package equipmentManagementSystem.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import equipmentManagementSystem.entity.Department;
 import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.service.DepartmentService;
@@ -25,6 +26,7 @@ public class DepartmentController {
     }
 
     @GetMapping("getAll")
+    @JsonView(Department.UserJsonView.class)
     public Page<Department> page(@RequestParam int page, @RequestParam int size) {
         return this.departmentService.findAll(PageRequest.of(page, size));
     }

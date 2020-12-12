@@ -27,12 +27,15 @@ public class User{
      * 部门
      */
     @OneToOne
+    @JsonView(DepartmentJsonView.class)
     private Department department;
 
     /**
      * 姓名
      */
     private String name;
+
+    private String phone;
 
     /**
      * 密码
@@ -86,6 +89,14 @@ public class User{
         return username;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
     public String getName() {
         return name;
     }
@@ -118,6 +129,14 @@ public class User{
         this.name = name;
     }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     public void setRole(Long role) {
         this.role = role;
     }
@@ -132,5 +151,9 @@ public class User{
 
     public interface PasswordJsonView {
     }
+
+    public interface DepartmentJsonView {
+    }
+
 
 }

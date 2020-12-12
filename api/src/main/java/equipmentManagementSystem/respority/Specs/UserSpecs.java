@@ -34,11 +34,11 @@ public class UserSpecs {
         return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get("role").as(Long.class),  role);
     }
 
-    public static Specification<User> isNotAdmin(Long role) {
-        if (role == null) {
+    public static Specification<User> isNotCurrentUser(Long id) {
+        if (id == null) {
             return Specification.where(null);
         }
-        return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.notEqual(root.get("role").as(Long.class),  role);
+        return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.notEqual(root.get("id").as(Long.class),  id);
     }
 
 }

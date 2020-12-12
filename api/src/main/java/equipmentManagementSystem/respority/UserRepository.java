@@ -33,10 +33,10 @@ public interface UserRepository extends JpaRepository<User, Long>, PagingAndSort
         return this.findById(id).isPresent();
     }
 
-    default Page getAll(String name, String username, String jobNumber, Long role, @NotNull Pageable pageable) {
+    default Page getAll(String name, String username, String jobNumber, Long role, Long id, @NotNull Pageable pageable) {
         Assert.notNull(pageable, "传入的Pageable不能为null");
         Specification<User> specification = UserSpecs.containingName(name).and(UserSpecs.containingUsername(username))
-                .and(UserSpecs.containingJobNumber(jobNumber)).and(UserSpecs.isRole(role)).and(UserSpecs.isNotAdmin(0L));
+                .and(UserSpecs.containingJobNumber(jobNumber)).and(UserSpecs.isRole(role)).and(UserSpecs.isNotCurrentUser(id));
       return this.findAll(specification, pageable);
     }
 

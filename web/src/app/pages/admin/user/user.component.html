@@ -14,6 +14,7 @@
     <th scope="col">序号</th>
     <th scope="col">姓名</th>
     <th scope="col">性别</th>
+    <th scope="col">手机号</th>
     <th scope="col">编号</th>
     <th scope="col">角色</th>
     <th scope="col">部门</th>
@@ -23,17 +24,18 @@
   <tbody>
   <tr *ngFor="let user of users.content; let $index = index;">
     <td>{{$index + 1}}</td>
-    <td>{{user.name}}</td>
-    <td>{{user.sex | sex}}</td>
-    <td>{{user.jobNumber}}</td>
-    <td>{{user.role | role}}</td>
-    <td>{{user.department.name}}</td>
+    <td>{{user?.name}}</td>
+    <td>{{user?.sex | sex}}</td>
+    <td>{{user?.phone}}</td>
+    <td>{{user?.jobNumber}}</td>
+    <td>{{user?.role | role}}</td>
+    <td>{{user?.department?.name}}</td>
     <td>
       <button class="btn btn-primary btn-sm mr-2" routerLink="/user/edit/{{user.id}}">
         <i class="fas fa-edit"></i>
         编辑
       </button>
-      <button type="button" class="btn btn-danger btn-sm mr-2">
+      <button type="button" class="btn btn-danger btn-sm mr-2" (click)="delete(user)">
         <i class="fas fa-trash-alt"></i>
         删除
       </button>

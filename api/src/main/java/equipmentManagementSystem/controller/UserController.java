@@ -50,6 +50,7 @@ public class UserController {
     }
 
     @GetMapping("me")
+    @JsonView(User.DepartmentJsonView.class)
     public User me(@AuthenticationPrincipal Principal user) {
         logger.debug("获取用户名");
         String username = user.getName();
@@ -101,6 +102,7 @@ public class UserController {
      * @return 所有学生
      */
     @GetMapping("getAll")
+    @JsonView(User.DepartmentJsonView.class)
     public Page<User> findAll(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String username,
@@ -153,4 +155,5 @@ public class UserController {
     public void heartbeat() {
         logger.info("heartbeat");
     }
+
 }

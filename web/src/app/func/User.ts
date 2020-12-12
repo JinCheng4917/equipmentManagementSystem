@@ -26,13 +26,17 @@ export class User {
   /** 是否为admin */
   sex: boolean;
 
-  constructor(data?: { id?: number, name?: string, username?: string, password?: string, role?: number, sex?: boolean, jobNumber?: string, department?: Department}) {
+  phone: string;
+
+  // tslint:disable-next-line:max-line-length
+  constructor(data?: { id?: number, name?: string, username?: string, password?: string, role?: number,
+    sex?: boolean, jobNumber?: string, phone?: string, department?: Department}) {
     if (data) {
       if (data.id) {
         this.id = data.id;
       }
 
-    if (data.name) {
+      if (data.name) {
       this.name = data.name;
     }
 
@@ -54,8 +58,11 @@ export class User {
       if (data.jobNumber) {
         this.jobNumber = data.jobNumber;
       }
-      if(data.department) {
+      if (data.department) {
         this.department = data.department;
+      }
+      if (data.phone) {
+        this.phone = data.phone;
       }
     }
 
