@@ -4,6 +4,7 @@ import {Page} from '../base/page';
 import {CommonService} from './common.service';
 import {HttpClient} from '@angular/common/http';
 import {Department} from '../func/Department';
+import {User} from "../func/User";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,20 @@ export class DepartmentService {
     };
 
     return this.httpClient.get<Page<Department>>(`${this.url}/getAll`, {params});
+  }
+
+  /**
+   * 通过Id获取用户
+   */
+  public getDepartmentById(userId: number): Observable<Department> {
+    return this.httpClient.get<Department>(`${this.url}/${userId.toString()}`);
+  }
+
+  /**
+   * 更新
+   */
+  public update(userId: number, department: Department): Observable<Department> {
+    return this.httpClient.put<Department>(`${this.url}/${userId.toString()}`, department);
   }
 
   findAll(): any{

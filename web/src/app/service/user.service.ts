@@ -8,7 +8,6 @@ import {VUser} from '../base/vuser';
 import {AbstractControl, AsyncValidatorFn, FormGroup, ValidationErrors, ValidatorFn} from '@angular/forms';
 import {User} from '../func/User';
 import {Page} from '../base/page';
-import {Department} from "../func/Department";
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +44,20 @@ export class UserService {
    */
   getCurrentUser(): User | null {
     return this.currentLoginUser;
+  }
+
+  /**
+   * 通过Id获取用户
+   */
+  public getUserById(userId: number): Observable<User> {
+    return this.httpClient.get<User>(`${this.url}/${userId.toString()}`);
+  }
+
+  /**
+   * 更新
+   */
+  public update(userId: number, user: User): Observable<User> {
+    return this.httpClient.put<User>(`${this.url}/${userId.toString()}`, user);
   }
 
   login(user: User): Observable<User> {
@@ -163,5 +176,22 @@ export class UserService {
 
   public delete(userId: number): Observable<null> {
     return this.httpClient.delete<null>(`${this.url}/${userId.toString()}`);
+  }
+
+  query(params: { size?: number; name?: any; page?: number; jobNumber?: any }): any {
+    /* 设置默认值 */
+    if (params.page === undefined) {
+      params.page = 0;
+    }
+    if (params.size === undefined) {
+      params.size = 10;
+    }
+    const PARAM = {
+      name: params.name ? params.name : '',
+      jobNumber: params.jobNumber ? params.jobNumber : '',
+      page: params.page.toLocaleString(),
+      size: params.size.toLocaleString()
+    };
+    return this.httpClient.get<{ totalPages: number, content: Array<User> }>(`${this.url}/query`, {params: PARAM});
   }
 }

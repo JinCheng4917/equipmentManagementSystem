@@ -1,5 +1,6 @@
 package equipmentManagementSystem.respority;
 
+import equipmentManagementSystem.entity.Department;
 import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.respority.Specs.UserSpecs;
 import org.apache.poi.ss.formula.functions.T;
@@ -33,11 +34,15 @@ public interface UserRepository extends JpaRepository<User, Long>, PagingAndSort
         return this.findById(id).isPresent();
     }
 
-    default Page getAll(String name, String username, String jobNumber, Long role, Long id, @NotNull Pageable pageable) {
-        Assert.notNull(pageable, "传入的Pageable不能为null");
-        Specification<User> specification = UserSpecs.containingName(name).and(UserSpecs.containingUsername(username))
-                .and(UserSpecs.containingJobNumber(jobNumber)).and(UserSpecs.isRole(role)).and(UserSpecs.isNotCurrentUser(id));
-      return this.findAll(specification, pageable);
-    }
+    default Page<User> query(Department department, String name, String jobNumber, Pageable pageable, Long id){
+        Assert.notNull(pageable, "pageable不能为null");
+        Specification<User> specification = UserSpecs.containingName(name).and(UserSpecs.containingJobNumber(jobNumber))
+                .and(UserSpecs.isNotCurrentUser(id)).and(UserSpecs.isDepartment(department));
+        return this.findAll(specification, pageable);
+    };
 
+    default Page<User> getAllByDepartment(Department department, Pageable pageable, Long id){
+        Specification<User> specification = UserSpecs.isDepartment(department).and(UserSpecs.isNotCurrentUser(id));
+        return this.findAll(specification, pageable);
+    };
 }

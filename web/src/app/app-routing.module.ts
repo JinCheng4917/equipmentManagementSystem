@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './pages/auth/login/login.component';
 import { LayoutComponent } from './part/layout/layout.component';
 
 const routes: Routes = [
@@ -26,9 +25,30 @@ const routes: Routes = [
       },
       {
         path: 'equipment',
-        loadChildren: () => import('./pages/admin/equipment/equipment.module').then(m => m.EquipmentModule),
+        loadChildren: () => import('./pages/user/equipment/equipment.module').then(m => m.EquipmentModule),
         data: {
           title: '设备管理'
+        }
+      },
+      {
+        path: 'manageUser',
+        loadChildren: () => import('./pages/user/user/user.module').then(m => m.UserModule),
+        data: {
+          title: '人员管理'
+        }
+      },
+      {
+        path: 'repairDepartment',
+        loadChildren: () => import('./pages/user/repair/repair.module').then(m => m.RepairModule),
+        data: {
+          title: '设备维修'
+        }
+      },
+      {
+        path: 'type',
+        loadChildren: () => import('./pages/admin/type/type.module').then(m => m.TypeModule),
+        data: {
+          title: '类型管理'
         }
       },
       {

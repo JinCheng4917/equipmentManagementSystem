@@ -1,6 +1,7 @@
 package equipmentManagementSystem.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import equipmentManagementSystem.entity.Department;
 import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.input.PUser;
 import equipmentManagementSystem.input.VUser;
@@ -71,6 +72,7 @@ public class UserController {
     }
 
     @GetMapping("user")
+    @JsonView(User.DepartmentJsonView.class)
     public User getCurrentLoginUser() {
         return this.userService.getCurrentLoginUser();
     }
@@ -87,6 +89,7 @@ public class UserController {
 
 
     @GetMapping("{id}")
+    @JsonView(User.DepartmentJsonView.class)
     public User getUserById(@PathVariable Long id) {
         return this.userService.getUserById(id);
     }
@@ -104,17 +107,8 @@ public class UserController {
     @GetMapping("getAll")
     @JsonView(User.DepartmentJsonView.class)
     public Page<User> findAll(
-            @RequestParam(required = false) String name,
-            @RequestParam(required = false) String username,
-            @RequestParam(required = false) String jobNumber,
-            @RequestParam(required = false) Long role,
             Pageable pageable) {
-        return this.userService.getAll(
-                name,
-                username,
-                jobNumber,
-                role,
-                pageable);
+        return this.userService.getAll(pageable);
     }
 
     @PatchMapping("resetPassword/{id}")
@@ -124,6 +118,7 @@ public class UserController {
 
 
     @PutMapping("{id}")
+    @JsonView(Department.UserJsonView.class)
     public User update(@PathVariable Long id, @RequestBody User user) {
         return this.userService.update(id, user);
     }
@@ -154,6 +149,24 @@ public class UserController {
     @GetMapping("heartbeat")
     public void heartbeat() {
         logger.info("heartbeat");
+    }
+
+
+    /**
+     * 获取所有作业
+     * @param pageable 分页信息
+     * @return 所有作业
+     */
+    @GetMapping("query")
+    @JsonView(Department.UserJsonView.class)
+    public Page<User> findAll(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String jobNumber,
+            Pageable pageable) {
+        return this.userService.quaryAll(
+                name,
+                jobNumber,
+                pageable);
     }
 
 }

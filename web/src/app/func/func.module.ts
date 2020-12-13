@@ -5,17 +5,23 @@ import { DepartmentSelectorComponent } from './selector/department-selector/depa
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
+import { TypeSelectorComponent } from './selector/type-selector/type-selector.component';
+import {StatusPipe} from './pipe/Status.pipe';
 @NgModule({
   declarations: [
     SexPipe,
+    StatusPipe,
     RolePipe,
-    DepartmentSelectorComponent
+    DepartmentSelectorComponent,
+    TypeSelectorComponent
   ],
-  exports: [
-    SexPipe,
-    RolePipe,
-    DepartmentSelectorComponent
-  ],
+    exports: [
+        SexPipe,
+        RolePipe,
+        StatusPipe,
+        DepartmentSelectorComponent,
+        TypeSelectorComponent
+    ],
   imports: [
     CommonModule,
     HttpClientModule,

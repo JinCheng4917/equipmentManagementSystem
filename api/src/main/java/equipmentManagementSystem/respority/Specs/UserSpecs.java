@@ -1,5 +1,6 @@
 package equipmentManagementSystem.respority.Specs;
 
+import equipmentManagementSystem.entity.Department;
 import equipmentManagementSystem.entity.User;
 import org.springframework.data.jpa.domain.Specification;
 
@@ -11,6 +12,7 @@ public class UserSpecs {
             return Specification.where(null);
         }
     }
+
     public static Specification<User> containingUsername(String username) {
         if (username != null) {
             return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("username").as(String.class), String.format("%%%s%%", username));
@@ -21,7 +23,7 @@ public class UserSpecs {
 
     public static Specification<User> containingJobNumber(String jobNumber) {
         if (jobNumber != null) {
-            return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("username").as(String.class), String.format("%%%s%%", jobNumber));
+            return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.like(root.get("jobNumber").as(String.class), String.format("%%%s%%", jobNumber));
         } else {
             return Specification.where(null);
         }
@@ -39,6 +41,13 @@ public class UserSpecs {
             return Specification.where(null);
         }
         return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.notEqual(root.get("id").as(Long.class),  id);
+    }
+
+    public static Specification<User> isDepartment(Department department) {
+        if (department == null) {
+            return Specification.where(null);
+        }
+        return (Specification<User>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get("department").as(Department.class),  department);
     }
 
 }

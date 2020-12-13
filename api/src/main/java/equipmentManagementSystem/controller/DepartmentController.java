@@ -2,6 +2,7 @@ package equipmentManagementSystem.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import equipmentManagementSystem.entity.Department;
+import equipmentManagementSystem.entity.Equipment;
 import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.service.DepartmentService;
 import org.slf4j.Logger;
@@ -31,7 +32,20 @@ public class DepartmentController {
         return this.departmentService.findAll(PageRequest.of(page, size));
     }
 
+    @PutMapping("{id}")
+    @JsonView(Department.UserJsonView.class)
+    public Department update(@PathVariable Long id, @RequestBody Department department) {
+        return this.departmentService.update(id, department);
+    }
+
+    @GetMapping("{id}")
+    @JsonView(Department.UserJsonView.class)
+    public Department getEquipmentById(@PathVariable Long id) {
+        return this.departmentService.getDepartmentById(id);
+    }
+
     @GetMapping
+    @JsonView(Department.UserJsonView.class)
     public List<Department> getAll() {
         return this.departmentService.getAll();
     }

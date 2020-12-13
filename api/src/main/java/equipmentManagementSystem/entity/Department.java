@@ -1,11 +1,12 @@
 package equipmentManagementSystem.entity;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.mengyunzhi.core.entity.YunzhiEntity;
 
 import javax.persistence.*;
 
 @Entity
-public class Department{
+public class Department implements YunzhiEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

@@ -38,6 +38,7 @@ public class AuthController {
     }
 
     @GetMapping("login")
+    @JsonView(User.DepartmentJsonView.class)
     public void login(@AuthenticationPrincipal Principal user, HttpServletResponse response) {
         logger.debug("获取用户名");
         String username = user.getName();
@@ -69,7 +70,7 @@ public class AuthController {
     }
 
     @GetMapping("user")
-    @JsonView(getCurrentLoginUser.class)
+    @JsonView(User.DepartmentJsonView.class)
     public User getCurrentLoginUser() {
         return this.userService.getCurrentLoginUser();
     }

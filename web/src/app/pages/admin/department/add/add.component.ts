@@ -50,7 +50,7 @@ export class AddComponent implements OnInit {
     this.departmentService.save(this.departmentForm.value).subscribe(() => {
       this.commomService.success(() => {
         this.commonService.back();
-      }, '新增成功');
+      }, '部门新增成功');
     }, (response: HttpErrorResponse) => {
       this.commonService.httpError(response);
     });

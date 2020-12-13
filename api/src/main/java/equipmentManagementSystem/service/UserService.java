@@ -8,7 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import javax.xml.bind.ValidationException;
-import java.util.List;
 
 public interface UserService {
     static User getOneUser() {
@@ -76,7 +75,8 @@ public interface UserService {
      * <p>
      * List<User>
      */
-    Page<User> getAll(String name, String username, String jobNumber, Long role, Pageable pageable);
+    Page<User> getAll(Pageable pageable);
+
 
     /**
      * 验证新号码是否被用户使用
@@ -139,4 +139,6 @@ public interface UserService {
      * @return
      */
     User getCurrentLoginUser();
+
+    Page<User> quaryAll(String name, String jobNumber, Pageable pageable);
 }

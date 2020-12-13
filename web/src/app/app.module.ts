@@ -8,11 +8,13 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {YunzhiInterceptor} from './net/yunzhi.interceptor';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import { RepairComponent } from './pages/user/repair/repair.component';
+import { UserComponent } from './pages/user/user/user.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

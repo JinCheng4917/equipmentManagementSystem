@@ -14,6 +14,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.EntityNotFoundException;
 import javax.xml.bind.ValidationException;
@@ -72,6 +74,17 @@ public class UserServiceImpl implements UserService{
         return user;
     }
 
+    @Override
+    public Page<User> quaryAll(String name, String jobNumber, Pageable pageable) {
+        if (this.getCurrentLoginUser().getRole() != 3){
+            return (Page<User>) this.userRepository.query(null, name, jobNumber, pageable, this.getCurrentLoginUser().getId());
+        }
+        else {
+            return this.userRepository.query(this.getCurrentLoginUser().getDepartment(),name, jobNumber,
+                    pageable, this.getCurrentLoginUser().getId());
+        }
+    }
+
     public User getOneSavedUser() {
         User user = this.getOneUnsavedUser();
         return this.userRepository.save(user);
@@ -83,9 +96,15 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Page<User> getAll(String name, String username, String jobNumber, Long role, Pageable pageable) {
+    public Page<User> getAll(Pageable pageable) {
         Long id = this.getCurrentLoginUser().getId();
-        return (Page<User>) this.userRepository.getAll(name, username, jobNumber, role, id,  pageable);
+        if (this.getCurrentLoginUser().getRole() != 3){
+            return (Page<User>) this.userRepository.findAll(pageable);
+        }
+       else {
+           return this.userRepository.getAllByDepartment(this.getCurrentLoginUser().getDepartment(),
+                   pageable , this.getCurrentLoginUser().getId());
+        }
     }
 
 
@@ -109,6 +128,10 @@ public class UserServiceImpl implements UserService{
         oldUser.setUsername(user.getUsername());
         oldUser.setName(user.getName());
         oldUser.setSex(user.getSex());
+        oldUser.setDepartment(user.getDepartment());
+        oldUser.setJobNumber(user.getJobNumber());
+        oldUser.setPhone(user.getPhone());
+        oldUser.setRole(user.getRole());
         return this.userRepository.save(oldUser);
     }
 

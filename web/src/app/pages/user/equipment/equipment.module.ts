@@ -7,6 +7,7 @@ import { EditComponent } from './edit/edit.component';
 import {EquipmentRoutingModule} from './equipment-routing.module';
 import {EquipmentComponent} from './equipment.component';
 import { DetailComponent } from './detail/detail.component';
+import {StatusPipe} from '../../../func/pipe/Status.pipe';
 
 @NgModule({
   declarations: [EquipmentComponent, AddComponent, EditComponent, DetailComponent],

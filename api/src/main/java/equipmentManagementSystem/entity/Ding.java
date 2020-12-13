@@ -1,6 +1,6 @@
 package equipmentManagementSystem.entity;
 
-public class Ding {
+public class Ding  {
     public String webHook;
     public String secret;
 

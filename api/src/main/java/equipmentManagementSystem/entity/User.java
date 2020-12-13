@@ -2,6 +2,7 @@ package equipmentManagementSystem.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.mengyunzhi.core.entity.YunzhiEntity;
 import equipmentManagementSystem.service.BeanService;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.util.Set;
  */
 
 @Entity
-public class User{
+public class User implements YunzhiEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -26,7 +27,7 @@ public class User{
     /**
      * 部门
      */
-    @OneToOne
+    @ManyToOne
     @JsonView(DepartmentJsonView.class)
     private Department department;
 

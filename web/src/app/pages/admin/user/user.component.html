@@ -1,3 +1,15 @@
+<form (ngSubmit)="onQuery()">
+  <label>姓名：<input name="name" [formControl]="queryParams.name" type="text"/></label>
+  &nbsp;
+  <label>工号：<input name="jobNumber" [formControl]="queryParams.jobNumber" type="text"/></label>
+
+  <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-search"></i>查询</button>
+  &nbsp;
+  <button class="btn btn-sm btn-warning" (click)="clear()">
+    <i class="fas fa-trash-alt"></i>
+    清空
+  </button>
+</form>
 <div class="row">
   <div class="col-lg-4">
   </div>

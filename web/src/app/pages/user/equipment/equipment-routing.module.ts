@@ -21,17 +21,17 @@ const routes: Routes = [
     }
   },
   {
-    path: 'edit',
+    path: 'edit/:id',
     component: EditComponent,
     data: {
       title: '编辑'
     }
   },
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: DetailComponent,
     data: {
-      title: '详情'
+      title: '借用'
     }
   }
 ];

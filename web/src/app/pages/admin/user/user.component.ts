@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../service/user.service';
 import {User} from '../../../func/User';
-import {CommonService} from "../../../service/common.service";
+import {CommonService} from '../../../service/common.service';
+import {FormControl} from '@angular/forms';
+import {config} from '../../../conf/app.conf';
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
@@ -16,6 +18,16 @@ export class UserComponent implements OnInit {
   public params = {
     page: 0,
     size: 10,
+  };
+
+
+  /* 查询参数 */
+  queryParams = {
+    page: 0,
+    status: undefined,
+    size: this.params.size,
+    name: new FormControl(),
+    jobNumber: new FormControl()
   };
 
   /* 分页数据 */
@@ -53,5 +65,32 @@ export class UserComponent implements OnInit {
         });
       }
     }, '即将删除人员');
+  }
+
+  onQuery(): void {
+    this.loadData();
+  }
+  clear(): void {
+    this.queryParams.name = new FormControl();
+    this.queryParams.jobNumber = new FormControl();
+    this.loadData();
+  }
+
+  /**
+   * 加载数据
+   */
+  loadData(): void {
+    const queryParams = {
+      page: this.params.page,
+      size: config.size,
+      name: this.queryParams.name.value,
+      jobNumber: this.queryParams.jobNumber.value
+    };
+
+    this.userService.query(queryParams)
+      .subscribe((response: { totalPages: number, content: Array<User> }) => {
+        this.users = response;
+        // this.pages = this.makePagesByTotalPages(this.params.page, response.totalPages);
+      });
   }
 }
