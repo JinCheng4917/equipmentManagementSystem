@@ -1,3 +1,45 @@
+<form (ngSubmit)="onQuery()">
+  <label>名称：<input name="name" [formControl]="queryParams.name" type="text"/></label>
+  &nbsp;
+  <label>编码：<input name="internalNumber" [formControl]="queryParams.internalNumber" type="text"/></label>
+
+  <label>存放位置：<input name="place" [formControl]="queryParams.place" type="text"/></label>
+
+    <div class="row">
+        <label for="type" class="form-text">类别：</label>
+      <div class="col-md-5">
+        <app-type-selector id="type" (goodsSelect)="bindType($event)"></app-type-selector>
+      </div>
+    </div>
+
+  <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-search"></i>查询</button>
+  &nbsp;
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" [checked]="1" (change)="onCheckBoxChange($event, 4)" id="customRadioInline5" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline5">全部</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" (change)="onCheckBoxChange($event, 0)" id="customRadioInline0" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline0">正常</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" (change)="onCheckBoxChange($event, 1)" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline1">已借出</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" (change)="onCheckBoxChange($event, 2)" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline2">报修中</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" (change)="onCheckBoxChange($event, 3)" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline3">已报废</label>
+  </div>
+  <button class="btn btn-sm btn-warning" (click)="clear()">
+    <i class="fas fa-trash-alt"></i>
+    清空
+  </button>
+</form>
+
 <div class="row">
   <div class="col-lg-4">
   </div>

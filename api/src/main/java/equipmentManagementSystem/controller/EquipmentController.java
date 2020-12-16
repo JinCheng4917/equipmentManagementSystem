@@ -3,10 +3,12 @@ package equipmentManagementSystem.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import equipmentManagementSystem.entity.Department;
 import equipmentManagementSystem.entity.Equipment;
+import equipmentManagementSystem.entity.Type;
 import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.service.EquipmentService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,6 +45,24 @@ public class EquipmentController {
     @JsonView(Department.UserJsonView.class)
     public Equipment getEquipmentById(@PathVariable Long id) {
         return this.equipmentService.getEquipmentById(id);
+    }
+
+    @GetMapping("query")
+    @JsonView(Department.UserJsonView.class)
+    public Page<Equipment> findAll(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String internalNumber,
+            @RequestParam(required = false) String  place,
+            @RequestParam(required = false) Long states,
+            @RequestParam(required = false) Long type,
+            Pageable pageable) {
+        return this.equipmentService.quaryAll(
+                name,
+                states,
+                place,
+                internalNumber,
+                pageable,
+                type);
     }
 
     @PostMapping

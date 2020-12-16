@@ -7,6 +7,8 @@ import {HttpErrorResponse} from "@angular/common/http";
 import {CommonService} from "../../../service/common.service";
 import {AuthService} from "../../../service/auth.service";
 import {User} from "../../../func/User";
+import {FormControl} from "@angular/forms";
+import {config} from "../../../conf/app.conf";
 
 @Component({
   selector: 'app-equipment',
@@ -27,6 +29,18 @@ export class EquipmentComponent implements OnInit {
     totalPages: 0,
     content: new Array<Equipment>()
   };
+
+  /* 查询参数 */
+  queryParams = {
+    page: 0,
+    states: undefined,
+    size: this.params.size,
+    name: new FormControl(),
+    internalNumber: new FormControl(),
+    place: new FormControl(),
+    type: null
+  };
+
   currentUser: User;
   fontColor: any;
   constructor(private equipmentService: EquipmentService,
@@ -66,6 +80,64 @@ export class EquipmentComponent implements OnInit {
       this.fontColor = '#df2e2e';
     }
     return this.fontColor;
+  }
+
+  bindType(thType: Type): void {
+    if ( thType && thType.id) {
+      // 合法，设置 college
+     this.queryParams.type = thType.id;
+    } else {
+     this.queryParams.type = null;
+    }
+  }
+
+  /**
+   * 单选框被用户点击时
+   * @param $event 弹射值
+   * @param reviewed 评阅状态码1默认2已评阅3未评阅
+   */
+  onCheckBoxChange($event: Event, reviewed: number): void {
+    switch (reviewed) {
+      case 0: this.queryParams.states = 0; break;
+      case 1: this.queryParams.states = 1; break;
+      case 2: this.queryParams.states = 2; break;
+      case 3: this.queryParams.states = 3; break;
+      case 4: this.queryParams.states = null; break;
+    }
+    this.loadData();
+  }
+
+  onQuery(): void {
+    this.loadData();
+  }
+
+  clear(): void {
+    this.queryParams.name = new FormControl();
+    this.queryParams.internalNumber = new FormControl();
+    this.queryParams.place = new FormControl();
+    this.queryParams.type = null;
+    this.loadData();
+  }
+
+  /**
+   * 加载数据
+   */
+  loadData(): void {
+    const queryParams = {
+      page: this.params.page,
+      size: config.size,
+      name: this.queryParams.name.value,
+      internalNumber: this.queryParams.internalNumber.value,
+      type: this.queryParams.type,
+      place: this.queryParams.place.value,
+      states: this.queryParams.states
+    };
+    console.log(queryParams);
+    this.equipmentService.query(queryParams)
+      .subscribe((response: { totalPages: number, content: Array<Equipment> }) => {
+        this.equipments = response;
+        // this.pages = this.makePagesByTotalPages(this.params.page, response.totalPages);
+      });
   }
 
   delete(equipment: Equipment): void {

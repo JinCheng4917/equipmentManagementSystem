@@ -1,10 +1,14 @@
 package equipmentManagementSystem.service;
 
+import com.mengyunzhi.core.service.CommonService;
 import equipmentManagementSystem.entity.Equipment;
 import equipmentManagementSystem.entity.Type;
 import equipmentManagementSystem.respority.EquipmentRepository;
+import equipmentManagementSystem.respority.TypeRepository;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -15,12 +19,16 @@ public class EquipmentServiceImpl implements EquipmentService{
     private EquipmentRepository equipmentRepository;
     private DingService dingService;
     private UserService userService;
+    private TypeRepository typeRepository;
+    private Type type;
 
     public EquipmentServiceImpl(EquipmentRepository equipmentRepository,
                                 UserService userService,
+                                TypeRepository typeRepository,
                                 DingService dingService){
         this.equipmentRepository = equipmentRepository;
         this.dingService = dingService;
+        this.typeRepository = typeRepository;
         this.userService = userService;
     }
     @Override
@@ -36,6 +44,18 @@ public class EquipmentServiceImpl implements EquipmentService{
     @Override
     public Equipment getEquipmentById(Long id) {
         return this.equipmentRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("找不到相关设备"));
+    }
+
+    @Override
+    public Page<Equipment> quaryAll(String name, Long states, String place, String internalNumber, Pageable pageable, Long typeId) {
+        if (typeId != null){
+            this.type = new Type();
+            Type type1 = this.typeRepository.findById(typeId).get();
+            this.type.setId(type1.getId());
+        }else {
+            this.type = null;
+        }
+        return this.equipmentRepository.query(name,states, place, internalNumber, pageable, this.type);
     }
 
     @Override

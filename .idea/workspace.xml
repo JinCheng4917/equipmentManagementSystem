@@ -2,79 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e5d18e8-c310-419e-96c0-f2ddb9d87ddd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/EquipmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/TypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/EquipmentSpecs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/TypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/TypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/startup/InitUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/BorrowTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Borrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Ding.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Ding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/EquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/EquipmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/EquipmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/EquipmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/UserSpecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/UserSpecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/DepartmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/func/Equipment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/func/Equipment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/func/Menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/func/Menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/func/func.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/func/func.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/add/add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/add/add.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/edit/edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/department/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/department/edit/edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/add/add.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/add/add.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/add/add.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/add/add.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/detail/detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/detail/detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/edit/edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/edit/edit.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/edit/edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/edit/edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/equipment-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/equipment.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/equipment.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/equipment.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/equipment.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/equipment/equipment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/type/add/add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/type/add/add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/type/add/add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/type/add/add.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/type/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/type/edit/edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/type/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/type/edit/edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/type/type.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/type/type.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/type/type.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/type/type.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/edit/edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/edit/edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/personal-center/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/personal-center/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/add/add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/add/add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/add/add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/add/add.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/edit/edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/edit/edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/edit/edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/EquipmentSpecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/EquipmentSpecs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/TypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/TypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/conf/app.conf.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/conf/app.conf.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/conf/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/conf/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/part/part.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/part/part.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/service/department.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/department.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/service/menu.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/menu.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/service/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/service/equipment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/equipment.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +85,8 @@
       <workItem from="1607807130136" duration="969000" />
       <workItem from="1607826478115" duration="6167000" />
       <workItem from="1607850021695" duration="14997000" />
-      <workItem from="1607900640550" duration="780000" />
+      <workItem from="1607900640550" duration="8199000" />
+      <workItem from="1608118700319" duration="62000" />
     </task>
     <servers />
   </component>

@@ -31,4 +31,6 @@ public interface EquipmentService {
     Equipment update(Long id, Equipment equipment);
 
     Equipment getEquipmentById(Long id);
+
+    Page<Equipment> quaryAll(String name, Long states, String place, String internalNumber, Pageable pageable, Long type);
 }

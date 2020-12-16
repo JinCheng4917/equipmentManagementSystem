@@ -70,6 +70,37 @@ export class EquipmentService {
     return this.httpClient.put<Equipment>(`${this.url}/scrap/${equipmentId.toString()}`, equipment);
   }
 
+  query(params: { size?: number; name?: any; page?: number; internalNumber?: any; type?: any, place?: any; states?: any }): any {
+    /** 初始化分页参数 */
+    const PARAMS: { [key: string]: any } = {
+      page: String(params.page),
+      size: String(params.size),
+    };
+    /** 过滤参数 */
+    if (params.type) {
+      PARAMS.type = params.type;
+    }
+    if (params.states) {
+      console.log(params.states);
+      PARAMS.states = params.states;
+    }else {
+      if (params.states === 0){
+        PARAMS.states = 0;
+      }
+    }
+    if (params.name) {
+      PARAMS.name = params.name;
+    }
+    if (params.internalNumber) {
+      PARAMS.internalNumber = params.internalNumber;
+    }
+    if (params.place) {
+      PARAMS.place = params.place;
+    }
+    console.log(PARAMS);
+    return this.httpClient.get<{ totalPages: number, content: Array<User> }>(`${this.url}/query`, {params: PARAMS});
+  }
+
   /**
    * 根据id获取订单
    * @param id  订单id

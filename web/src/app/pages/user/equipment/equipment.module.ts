@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FuncModule } from '../../../func/func.module';
 import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
@@ -15,7 +15,8 @@ import {StatusPipe} from '../../../func/pipe/Status.pipe';
     CommonModule,
     ReactiveFormsModule,
     EquipmentRoutingModule,
-    FuncModule
+    FuncModule,
+    FormsModule
   ]
 })
 export class EquipmentModule {
