@@ -39,4 +39,11 @@ public class EquipmentSpecs {
             return Specification.where(null);
         }
     }
+
+    public static Specification<Equipment> isCurrentUser(User user) {
+        if (user == null) {
+            return Specification.where(null);
+        }
+        return (Specification<Equipment>) (root, criteriaQuery, criteriaBuilder) -> criteriaBuilder.equal(root.get("user").as(User.class),  user);
+    }
 }

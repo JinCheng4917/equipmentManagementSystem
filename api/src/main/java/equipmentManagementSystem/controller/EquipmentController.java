@@ -34,6 +34,12 @@ public class EquipmentController {
         return this.equipmentService.getToRepair(PageRequest.of(page, size));
     }
 
+    @GetMapping("getBorrow")
+    @JsonView(Department.UserJsonView.class)
+    public Page<Equipment> getBorrow(@RequestParam int page, @RequestParam int size) {
+        return this.equipmentService.getBorrow(PageRequest.of(page, size));
+    }
+
 
     @PutMapping("{id}")
     @JsonView(Department.UserJsonView.class)
@@ -81,6 +87,19 @@ public class EquipmentController {
     public Equipment  report(@PathVariable Long id, @RequestBody Equipment equipment) {
         return this.equipmentService.report(id, equipment);
     }
+
+    @PutMapping("borrow/{id}")
+    @JsonView(Department.UserJsonView.class)
+    public Equipment  borrow(@PathVariable Long id, @RequestBody Equipment equipment) {
+        return this.equipmentService.borrow(id, equipment);
+    }
+
+    @PutMapping("return/{id}")
+    @JsonView(Department.UserJsonView.class)
+    public Equipment  toReturn(@PathVariable Long id, @RequestBody Equipment equipment) {
+        return this.equipmentService.toReturn(id, equipment);
+    }
+
 
     @PutMapping("repair/{id}")
     @JsonView(Department.UserJsonView.class)

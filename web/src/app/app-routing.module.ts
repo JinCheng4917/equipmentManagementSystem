@@ -24,6 +24,13 @@ const routes: Routes = [
         }
       },
       {
+        path: 'myBorrow',
+        loadChildren: () => import('./pages/user/detail/detail.module').then(m => m.DetailModule),
+        data: {
+          title: '我的借用'
+        }
+      },
+      {
         path: 'equipment',
         loadChildren: () => import('./pages/user/equipment/equipment.module').then(m => m.EquipmentModule),
         data: {

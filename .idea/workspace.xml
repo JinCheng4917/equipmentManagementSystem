@@ -4,19 +4,28 @@
     <list default="true" id="8e5d18e8-c310-419e-96c0-f2ddb9d87ddd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/EquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/controller/EquipmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/entity/Equipment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/EquipmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/EquipmentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/EquipmentSpecs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/Specs/EquipmentSpecs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/TypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/respority/TypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/equipmentManagementSystem/service/EquipmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/conf/app.conf.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/conf/app.conf.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/conf/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/conf/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/auth/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/admin/user/user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/detail/detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/detail/detail.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/detail/detail.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/detail/detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/equipment/equipment.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/pages/user/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/pages/user/user/user.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/app/service/equipment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/equipment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/service/menu.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/service/menu.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +53,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/app/part" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/app/pages/user/detail" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -54,16 +63,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/src/app/part" />
-      <recent name="$PROJECT_DIR$/web/src/app/pages/user/user" />
-      <recent name="$PROJECT_DIR$/web/src/app/pages/user/repair" />
-      <recent name="$PROJECT_DIR$/web/src/app/func/pipe" />
-      <recent name="$PROJECT_DIR$/web/src/app/service" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/src/app/pages/user" />
       <recent name="$PROJECT_DIR$/web/src/app/pages/admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/src/app/pages/user/detail" />
+      <recent name="$PROJECT_DIR$/web/node_modules/@fortawesome" />
+      <recent name="$PROJECT_DIR$/web/node_modules" />
+      <recent name="$PROJECT_DIR$/web/src/app/part" />
+      <recent name="$PROJECT_DIR$/web/src/app/pages/user/user" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -87,10 +96,33 @@
       <workItem from="1607850021695" duration="14997000" />
       <workItem from="1607900640550" duration="8199000" />
       <workItem from="1608118700319" duration="62000" />
+      <workItem from="1608118890252" duration="3866000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1899" height="260" key="GridCell.Tab.0.bottom" timestamp="1608091282590">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1899" height="260" key="GridCell.Tab.0.bottom/0.23.1920.967@0.23.1920.967" timestamp="1608091282590" />
+    <state width="1899" height="260" key="GridCell.Tab.0.center" timestamp="1608091282589">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1899" height="260" key="GridCell.Tab.0.center/0.23.1920.967@0.23.1920.967" timestamp="1608091282589" />
+    <state width="1899" height="260" key="GridCell.Tab.0.left" timestamp="1608091282589">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1899" height="260" key="GridCell.Tab.0.left/0.23.1920.967@0.23.1920.967" timestamp="1608091282589" />
+    <state width="1899" height="260" key="GridCell.Tab.0.right" timestamp="1608091282590">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state width="1899" height="260" key="GridCell.Tab.0.right/0.23.1920.967@0.23.1920.967" timestamp="1608091282590" />
+    <state x="625" y="235" width="670" height="676" key="search.everywhere.popup" timestamp="1608091072549">
+      <screen x="0" y="23" width="1920" height="967" />
+    </state>
+    <state x="625" y="235" width="670" height="676" key="search.everywhere.popup/0.23.1920.967@0.23.1920.967" timestamp="1608091072549" />
   </component>
 </project>

@@ -15,7 +15,7 @@
   </div>
   <div class="col-lg-8 text-right button-group">
     <a class="btn btn-primary btn-sm" routerLink="/user/add">
-      <i class="fas fa-plus"></i>
+      <i class="fas fa-user-plus"></i>
       新增
     </a>
   </div>
@@ -44,11 +44,11 @@
     <td>{{user?.department?.name}}</td>
     <td>
       <button class="btn btn-primary btn-sm mr-2" routerLink="/user/edit/{{user.id}}">
-        <i class="fas fa-edit"></i>
+        <i class="fas fa-user-edit"></i>
         编辑
       </button>
       <button type="button" class="btn btn-danger btn-sm mr-2" (click)="delete(user)">
-        <i class="fas fa-trash-alt"></i>
+        <i class="fas fa-user-slash"></i>
         删除
       </button>
     </td>

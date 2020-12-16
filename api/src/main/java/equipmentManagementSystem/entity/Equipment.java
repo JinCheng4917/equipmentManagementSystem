@@ -52,6 +52,10 @@ public class Equipment implements YunzhiEntity {
      */
     private Long saleTime;
 
+    @OneToOne
+    @JsonView(Department.UserJsonView.class)
+    private User user;
+
     /**
      * 状态
      */
@@ -94,6 +98,9 @@ public class Equipment implements YunzhiEntity {
         return states;
     }
 
+    public User getUser() {
+        return user;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -129,6 +136,10 @@ public class Equipment implements YunzhiEntity {
 
     public void setStates(Integer states) {
         this.states = states;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
 

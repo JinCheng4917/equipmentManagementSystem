@@ -115,4 +115,21 @@ export class EquipmentService {
   update(equipmentId: number, equipment: Equipment): Observable<Equipment> {
     return this.httpClient.put<Equipment>(`${this.url}/${equipmentId.toString()}`, equipment);
   }
+
+  public borrow(equipmentId: number, equipment: Equipment): Observable<Equipment> {
+    return this.httpClient.put<Equipment>(`${this.url}/borrow/${equipmentId.toString()}`, equipment);
+  }
+
+  public return(equipmentId: number, equipment: Equipment): Observable<Equipment> {
+    return this.httpClient.put<Equipment>(`${this.url}/return/${equipmentId.toString()}`, equipment);
+  }
+
+  getAllByBorrow(page: number, size: number): any {
+    const params: { [key: string]: any } = {
+      page: String(page),
+      size: String(size),
+    };
+
+    return this.httpClient.get<Page<Equipment>>(`${this.url}/getBorrow`, {params});
+  }
 }

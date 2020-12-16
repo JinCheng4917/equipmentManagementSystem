@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { RepairComponent } from './pages/user/repair/repair.component';
 import { UserComponent } from './pages/user/user/user.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UserComponent } from './pages/user/user/user.component';
     PartModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [
     {

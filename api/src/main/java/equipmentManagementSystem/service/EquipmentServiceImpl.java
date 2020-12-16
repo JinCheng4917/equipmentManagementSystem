@@ -3,6 +3,7 @@ package equipmentManagementSystem.service;
 import com.mengyunzhi.core.service.CommonService;
 import equipmentManagementSystem.entity.Equipment;
 import equipmentManagementSystem.entity.Type;
+import equipmentManagementSystem.entity.User;
 import equipmentManagementSystem.respority.EquipmentRepository;
 import equipmentManagementSystem.respority.TypeRepository;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
@@ -12,6 +13,8 @@ import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -97,6 +100,36 @@ public class EquipmentServiceImpl implements EquipmentService{
     }
 
     @Override
+    public Equipment borrow(Long id, Equipment equipment) {
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateString = formatter.format(currentTime);
+        Equipment equipment1 = this.equipmentRepository.findById(id).get();
+
+        dingService.dingRequest("借用推送" + "\n" +"用户  "
+                + this.userService.getCurrentLoginUser().getName() + "   借用" +"\n" + "借用设备： " + equipment1.getName() + "\n"
+        + "借用时间： " + dateString);
+        equipment1.setUser(this.userService.getCurrentLoginUser());
+        equipment1.setStates(1);
+        return this.equipmentRepository.save(equipment1);
+    }
+
+    @Override
+    public Equipment toReturn(Long id, Equipment equipment) {
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateString = formatter.format(currentTime);
+        Equipment equipment1 = this.equipmentRepository.findById(id).get();
+
+        dingService.dingRequest("归还推送" + "\n" +"用户  "
+                + this.userService.getCurrentLoginUser().getName() + "   归还" +"\n" + "归还设备： " + equipment1.getName() + "\n"
+                + "归还时间： " + dateString);
+        equipment1.setUser(null);
+        equipment1.setStates(0);
+        return this.equipmentRepository.save(equipment1);
+    }
+
+    @Override
     public Equipment repair(Long id, Equipment equipment) {
         Equipment equipment1 = this.equipmentRepository.findById(id).get();
         dingService.dingRequest("维修推送" + "\n" +"用户  "
@@ -112,5 +145,11 @@ public class EquipmentServiceImpl implements EquipmentService{
                 +"报废设备： " + equipment1.getName() + "\n" + "用户  " + this.userService.getCurrentLoginUser().getName() + "  执行操作");
         equipment1.setStates(3);
         return this.equipmentRepository.save(equipment1);
+    }
+
+    @Override
+    public Page<Equipment> getBorrow(Pageable pageable) {
+        User user = this.userService.getCurrentLoginUser();
+        return this.equipmentRepository.getBorrow(user, pageable);
     }
 }

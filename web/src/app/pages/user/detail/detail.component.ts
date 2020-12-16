@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {Department} from '../../../func/Department';
-import {EquipmentService} from '../../../service/equipment.service';
 import {Equipment} from '../../../func/Equipment';
-import {Type} from '../../../func/Type';
-import {HttpErrorResponse} from '@angular/common/http';
+import {FormControl} from '@angular/forms';
+import {User} from '../../../func/User';
+import {EquipmentService} from '../../../service/equipment.service';
 import {CommonService} from '../../../service/common.service';
 import {AuthService} from '../../../service/auth.service';
-import {User} from '../../../func/User';
-import {FormControl} from '@angular/forms';
+import {Type} from '../../../func/Type';
 import {config} from '../../../conf/app.conf';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
-  selector: 'app-equipment',
-  templateUrl: './equipment.component.html',
-  styleUrls: ['./equipment.component.scss']
+  selector: 'app-detail',
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.scss']
 })
-export class EquipmentComponent implements OnInit {
+export class DetailComponent implements OnInit {
   /**
    * 分页信息
    */
@@ -58,7 +57,7 @@ export class EquipmentComponent implements OnInit {
 
 
   public pageAll(): void {
-    this.equipmentService.getAll(this.params.page,
+    this.equipmentService.getAllByBorrow(this.params.page,
       this.params.size)
       .subscribe((response: { totalPages: number, content: Array<Equipment> }) => {
         this.equipments = response;
@@ -85,9 +84,9 @@ export class EquipmentComponent implements OnInit {
   bindType(thType: Type): void {
     if ( thType && thType.id) {
       // 合法，设置 college
-     this.queryParams.type = thType.id;
+      this.queryParams.type = thType.id;
     } else {
-     this.queryParams.type = null;
+      this.queryParams.type = null;
     }
   }
 
@@ -170,18 +169,18 @@ export class EquipmentComponent implements OnInit {
     }, '是否确认报修');
   }
 
-  borrow(equipment: Equipment): void {
+  return(equipment: Equipment): void {
     // 确认框
     this.commonService.confirm((confirm: boolean) => {
       if (confirm) {
-        this.equipmentService.borrow(equipment.id, equipment).subscribe(() => {
+        this.equipmentService.return(equipment.id, equipment).subscribe(() => {
           this.commonService.success(() => {
-          }, '借用成功');
+          }, '归还成功');
           this.pageAll();
         }, (response: HttpErrorResponse) => {
           this.commonService.httpError(response);
         });
       }
-    }, '是否确认借用');
+    }, '是否确认归还');
   }
 }
